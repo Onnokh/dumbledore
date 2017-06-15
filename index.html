@@ -22,6 +22,15 @@
 	<script>
 
 
+        Dumble({
+
+            target:'spoiler-template',
+			random: 'true',
+			series: ['Suits', 'Breaking Bad', 'Game of Thrones', 'Sons of Anarchy'] // uit welke series mogen er spoilers getoond worden
+
+
+
+        });
 
 	</script>
 
@@ -37,26 +46,8 @@
 	</div>
 </div>
 
-
-
-<script>
-
-
-    getSpoiler();
-
-
-</script>
-
-
-
-
-	<div class="spoiler" id="spoiler">
-	</div>
-
-	<div id="spoiler-template">
-		<h1 class="spoilerfield-title"></h1>
-		<img class="spoilerfield-image" />
-	</div>
+		<div class="spoiler" id="spoiler-template">
+		</div>
 
 <button class="spoilmore" onClick="window.location.reload()">
 	spoil me more
