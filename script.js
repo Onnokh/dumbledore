@@ -1,22 +1,32 @@
-//SETTINGS
-var target = 'spoiler'; //targetdiv
-var random = true; //random spoiler of maar 1
-var series = ["Suits", "Game of Thrones", "Breaking Bad"]; // uit welke series mogen er spoilers getoond worden
 
 
 //FUNCTIONS
-function getSpoiler(title){
-    console.log(title);
-    if(title = 'undefined') {
 
-        function getRandomSerie() {
-            return series[Math.floor(Math.random() * series.length)];
-        }
+function Dumble(settings){
 
-        title = getRandomSerie();
-        console.log(title);
+    //alert(settings.series.isArray);
 
+    if(typeof settings.series.isArray !== 'string') {
+
+        var title = settings.series[Math.floor(Math.random() * settings.series.length)];
+
+    } else {
+
+        var title =  settings.series;
     }
+
+    if (settings.target) {
+        target = settings.target;
+    }
+
+    if (settings.random) {
+        random =  settings.random;
+    }
+
+
+    console.log(title);
+
+
 
 
     var regData = new FormData();
@@ -32,6 +42,8 @@ function getSpoiler(title){
     ajax.send(regData);
 
     function getSpoilerE(event){
+
+     //   alert(event.target.responseText);
 
 
         var json = JSON.parse(event.target.responseText);
