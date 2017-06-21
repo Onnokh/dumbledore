@@ -7,7 +7,13 @@ A **framework** written in JavaScript to get random spoilers from all your favor
 ## Code Example
 
 ```
- getSpoiler('Game of Thrones');
+Dumble({
+
+    target:'spoiler-template',
+    random: 'true',
+    series: ['Suits', 'Breaking Bad', 'Game of Thrones', 'Sons of Anarchy'] // uit welke series mogen er spoilers getoond worden
+			
+});
 ```
 
 Series added so far:
@@ -29,25 +35,26 @@ Download the _dumbledoredies.js_ file and import it at the top of your code.
 At the top of the script you can edit some settings.
 
 ```
-var target = 'spoiler';
+target = 'spoiler';
 ```
 
 Here you can set the div in which the spoiler should be shown.
 
 ```
-var random = true; 
+random = true; 
 ```
 If you want only 1 spoiler to show, instead of every refresh another one. Set this to __false__.
 
 ```
-var series = ["Suits", "Game of Thrones", "Breaking Bad"]; 
+series = ["Suits", "Game of Thrones", "Breaking Bad"]; 
 ```
 
-In this array you can set the series it should spoil from. This only works if you call the spoiler without an argument:
+```
+series = 'Suits';
+```
 
-```
-getSpoiler();
-```
+In this array you can set the series it should spoil from. You can chose between an array of series, or just a string. Make sure the string is not mispelled.
+
 
 
 
